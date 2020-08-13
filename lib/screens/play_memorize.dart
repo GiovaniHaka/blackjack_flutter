@@ -226,14 +226,19 @@ class _MemorizeState extends State<Memorize> {
                 )
               ],
             )
-          : RaisedButton(
-              onPressed: () {
-                setState(() {
-                  card = dequeMemorize.openCard();
-                });
-              },
-              child: Text("PLAY AGAIN"),
-            ),
+          : Center(
+            child: RaisedButton(
+                onPressed: () {
+                  setState(() {
+                    card = dequeMemorize.openCard();
+                    total = 0;
+                    hits = 0;
+                    errors = 0;
+                  });
+                },
+                child: Text("PLAY AGAIN"),
+              ),
+          ),
     );
   }
 }
